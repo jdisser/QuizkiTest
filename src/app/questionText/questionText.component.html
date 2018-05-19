@@ -1,2 +1,15 @@
 <h1>Component: Text</h1>
-<h2>{{qText}}</h2>
+<h2>{{qText}}  <button type="button" value="Edit" class="btn btn-default btn-lg" (click)="onEditClick()"></button></h2>
+
+<div class="row" *ngIf="showEditor">
+  <div class="col-md-12">
+    <form>
+      <div class="form-group">
+        <label for="questionTextInput">Enter a question</label>
+        <input type="text" class="form-control" id="questionTextInput" placeholder="Question" [(ngModel)]="qText" name="name">
+        <p class="help-block">Please enter text only</p>
+        <button type="button" value="Done" class="btn btn-default btn-lg" (click)="onDoneClick()"></button>
+      </div>
+    </form>
+  </div>
+</div>

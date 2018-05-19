@@ -6,4 +6,19 @@ import {Component} from '@angular/core';
 
 export class QuestionText {
   qText = "Property: Text";
+  showEditor: boolean;
+
+  ngOnInit(){
+    this.showEditor = false;
+  }
+
+  onEditClick(){
+    this.showEditor = true;
+    console.log(this.qText);
+  }
+
+  onDoneClick(){
+    this.showEditor = false;
+  }
+
 }
