@@ -1,7 +1,7 @@
 import {Component} from '@angular/core';
 @Component({
   selector: 'question-text',
-  templateUrl: './questionText.component.html'
+  templateUrl: './question-text.component.html'
 })
 
 export class QuestionText {

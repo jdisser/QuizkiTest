@@ -8,7 +8,6 @@ import { Component, OnInit } from '@angular/core';
 export class QuestionDifficultyComponent implements OnInit {
   qDifficulty = "Property: Difficulty"
   constructor() { }
-
   ngOnInit() {
   }
 }
