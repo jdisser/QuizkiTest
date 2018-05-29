@@ -7,6 +7,10 @@ import { QuestionTopicsComponent } from './questions/question/question-topics/qu
 import { QuestionReferencesComponent } from './questions/question/question-references/question-references.component';
 import { QuestionChoicesComponent } from './questions/question/question-choices/question-choices.component';
 import { QuestionsComponent } from '../app/questions/questions.component';
+import { QuestionChoiceComponent } from './questions/question/question-choices/question-choice/question-choice.component';
+import { QuestionReferenceComponent } from './questions/question/question-references/question-reference/question-reference.component';
+import { QuestionTopicComponent } from './questions/question/question-topics/question-topic/question-topic.component';
+
 
 
 
@@ -18,7 +22,10 @@ import { QuestionsComponent } from '../app/questions/questions.component';
     QuestionTopicsComponent,
     QuestionReferencesComponent,
     QuestionChoicesComponent,
-    QuestionsComponent
+    QuestionsComponent,
+    QuestionChoiceComponent,
+    QuestionReferenceComponent,
+    QuestionTopicComponent
   ],
   imports: [
     BrowserModule,
