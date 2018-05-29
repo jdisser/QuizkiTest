@@ -1,16 +1,17 @@
 import {QuestionTopic} from "./question/question-topics/questionTopicModel"
 import {QuestionReference} from "./question/question-references/questionReferenceModel"
 import {QuestionChoice} from "./question/question-choices/questionChoiceModel"
+import {QuestionTypes} from "./question/question-types/questionTypesEnum"
+import {QuestionDifficulties} from "./question/question-difficulties/questionDifficultiesEnum"
 
 export class QuestionModel {
   constructor(
     public id: number,
-    public typeId: number,
-    public typeText: string,
+    public type: QuestionTypes,
     public user: string,
     public text: string,
     public description: string,
-    public difficulty: Object,
+    public difficulty: QuestionDifficulties,
     public topics: QuestionTopic[],
     public references: QuestionReference[],
     public choices: QuestionChoice[]
