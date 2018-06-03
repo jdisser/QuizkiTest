@@ -4,7 +4,7 @@ import {QuestionChoice} from "./question/question-choices/questionChoiceModel"
 import {QuestionTypes} from "./question/question-types/questionTypesEnum"
 import {QuestionDifficulties} from "./question/question-difficulties/questionDifficultiesEnum"
 
-export class QuestionModel {
+export class Question {
   constructor(
     public id: number,
     public type: QuestionTypes,

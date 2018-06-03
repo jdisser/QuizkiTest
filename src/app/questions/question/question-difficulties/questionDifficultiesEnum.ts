@@ -1,5 +1,5 @@
 export enum QuestionDifficulties {
-  undefined = -1,
+  notdefined = -1,
   all = 0,
   Junior = 1,       //note inconsistent capitalization
   intermediate = 2,
@@ -9,6 +9,9 @@ export enum QuestionDifficulties {
 
 /*
 as defined in Quizki DifficultyEnums.java...
+
+note:   In Typescript undefined is a keyword and will break stuff
+        it's been changed to notdefined here to avoid that
 
 UNDEFINED (-1, "undefined"),
 ALL_DIFFICULTIES (0, "all"),
