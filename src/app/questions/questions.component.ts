@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {QuestionDataService} from "../questionData/question-data.service"
+import {Question} from "./questionModel"
 
 @Component({
   selector: 'app-questions',
@@ -7,9 +9,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class QuestionsComponent implements OnInit {
 
-  constructor() { }
+  question: Question;
+  questionService: QuestionDataService;
+
+  constructor( questionService: QuestionDataService) {
+
+    this.questionService = questionService;
+
+  }
 
   ngOnInit() {
+
+    //initialize the question with a default type for now.
+    this.question = this.questionService.getQuestionTypeData("single");
+
   }
 
 }
