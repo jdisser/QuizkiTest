@@ -1,0 +1,19 @@
+import { Injectable } from '@angular/core';
+import {TestData} from "./data"
+
+@Injectable({
+  providedIn: 'root'
+})
+export class QuestionDataService {
+
+  testdata: TestData;
+
+  constructor() {
+    this.testdata = new TestData();
+  }
+
+  getQuestionTypeData (type: string){
+    return this.testdata.getQuestionByType(type);
+  }
+
+}
