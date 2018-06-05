@@ -10,6 +10,8 @@ import { QuestionsComponent } from '../app/questions/questions.component';
 import { QuestionChoiceComponent } from './questions/question/question-choices/question-choice/question-choice.component';
 import { QuestionReferenceComponent } from './questions/question/question-references/question-reference/question-reference.component';
 import { QuestionTopicComponent } from './questions/question/question-topics/question-topic/question-topic.component';
+import { QuestionDifficultyComponent } from './questions/question/question-difficulties/question-difficulty.component';
+import { QuestionTypeComponent } from './questions/question/question-types/question-type.component';
 
 
 
@@ -25,7 +27,9 @@ import { QuestionTopicComponent } from './questions/question/question-topics/que
     QuestionsComponent,
     QuestionChoiceComponent,
     QuestionReferenceComponent,
-    QuestionTopicComponent
+    QuestionTopicComponent,
+    QuestionDifficultyComponent,
+    QuestionTypeComponent
   ],
   imports: [
     BrowserModule,
