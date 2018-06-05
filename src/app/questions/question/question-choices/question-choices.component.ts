@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import {QuestionChoice} from "./questionChoiceModel"
 
 @Component({
   selector: 'app-question-choices',
@@ -6,7 +7,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./question-choices.component.css']
 })
 export class QuestionChoicesComponent implements OnInit {
-  qChoices = "Property: Choices Collection"
+
+  @Input() choices: QuestionChoice[]
   constructor() { }
 
   ngOnInit() {

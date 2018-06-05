@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import {QuestionReference} from "./questionReferenceModel";
 
 @Component({
   selector: 'app-question-references',
@@ -6,7 +7,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./question-references.component.css']
 })
 export class QuestionReferencesComponent implements OnInit {
-  qReferences = "Property: References Collection"
+
+  @Input() references: QuestionReference[];
+
   constructor() { }
 
   ngOnInit() {
