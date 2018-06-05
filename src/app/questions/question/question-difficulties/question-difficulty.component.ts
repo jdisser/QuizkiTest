@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import {QuestionDifficulties} from "./questionDifficultiesEnum"
 
 @Component({
   selector: 'app-question-difficulty',
@@ -6,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./question-difficulty.component.css']
 })
 export class QuestionDifficultyComponent implements OnInit {
+
+  @Input() difficulty: QuestionDifficulties;
 
   constructor() { }
 

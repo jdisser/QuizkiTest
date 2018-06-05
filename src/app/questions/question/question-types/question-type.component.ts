@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import {QuestionTypes} from "./questionTypesEnum"
 
 @Component({
   selector: 'app-question-type',
@@ -6,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./question-type.component.css']
 })
 export class QuestionTypeComponent implements OnInit {
+
+  @Input() type: QuestionTypes;
 
   constructor() { }
 
