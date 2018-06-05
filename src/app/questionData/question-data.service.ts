@@ -16,4 +16,8 @@ export class QuestionDataService {
     return this.testdata.getQuestionByType(type);
   }
 
+  getQuestions(){
+    return this.testdata.getQuestions();
+  }
+
 }

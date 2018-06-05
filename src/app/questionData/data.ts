@@ -10,6 +10,10 @@ import {QuestionTypes} from "../questions/question/question-types/questionTypesE
 
 export class TestData {
 
+  //test data has been created by capturing JSON responses to getQuestionById() requests to Quizki
+  //individually and editing the data into the object as it appears below. It is NOT in the shape
+  //that would be expected when requesting a list of questions.
+
   private questions =   {
 
     multiple: { "question": [{"references":[{"text":"oceb fundamental book, chapter 2, p19","id":85},{"text":"quickmba.com\/accounting\/mgmt\/balanced-scorecard\/","id":84}],"type_id":"2","type_text":"Multiple","topics":[{"text":"analysis methods","id":145},{"text":"chapter 2","id":20},{"text":"balanced scorecard","id":171},{"text":"oceb fundamental","id":19},{"text":"swot","id":78}],"user_name":"johnathan","description":"","textWithoutHTML":"Which of these analysis methods deals with&nbsp;aspects internally and externally relevant to the organization?","difficulty_id":"1","difficulty_text":"Junior","entityStatus":0,"user_id":"1","dynamicDataFieldNames":[],"id":"370","text":"<p>Which of these analysis methods deals with&nbsp;aspects internally and externally relevant to the organization?<\/p>","choices":[{"sequence":"0","iscorrect":"true","id":"1086","text":"SWOT"},{"sequence":"0","iscorrect":"false","id":"1090","text":"Market Segmentation"},{"sequence":"0","iscorrect":"false","id":"1087","text":"Porter's Five Forces"},{"sequence":"0","iscorrect":"false","id":"1088","text":"STEP"},{"sequence":"0","iscorrect":"true","id":"1089","text":"Balanced Scorecard"}]}] },
@@ -24,12 +28,52 @@ export class TestData {
 
   }
 
+  public getQuestions (): Question[]{
+
+    //this function returns an array of questions, one of each type for testing
+
+    let questions: Question[]
+
+    let types: string[] = ["single", "multiple", "phrase", "sequence", "set"];
+
+    for (let type in types){
+
+      let data = this.questions[type];
+      let questionData = data["question"][0];
+      questions.push(this.parseQuestionJson(questionData));
+
+    }
+
+    return questions;
+
+
+  }
+
+
 
 
   public getQuestionByType (type: string): Question{
 
-    //this functions provides models for testing using JSON data as sent in response
-    //to a request for a single question bu ID
+    //this function provides a Question object for testing using JSON data as sent in response
+    //to a Quizki request for a single question by id
+
+    let rtn: Question;
+    //get the question[] from the data object and extract the question object
+    //from the array
+    let data = this.questions[type];
+    let questionData = data["question"][0];
+
+    //get the Question from the json data
+    rtn = this.parseQuestionJson(questionData);
+
+    return rtn;
+
+  }
+
+  private parseQuestionJson(json: Object): Question {
+
+    //this functions parses the JSON data sent in Quizki get question responses
+    //returns a Question object
 
     let rtn: Question;
 
@@ -43,10 +87,8 @@ export class TestData {
     let difficulty: QuestionDifficulties = QuestionDifficulties.notdefined;
     let qtype: QuestionTypes = QuestionTypes.all;
 
-    //get the question[] from the data object and extract the question object
-    //from the array
-    let data = this.questions[type];
-    let questionData = data["question"][0];
+    //initialize to refactored variable
+    let questionData = json;
 
     //extract the references from the JSON data if any, refs are optional
     if (questionData["references"] !== undefined){
@@ -96,6 +138,7 @@ export class TestData {
     //and we can return the result
 
     return rtn;
+
 
   }
 }

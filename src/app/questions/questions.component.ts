@@ -9,6 +9,7 @@ import {Question} from "./questionModel"
 })
 export class QuestionsComponent implements OnInit {
 
+  questions: Question[];
   question: Question;
   questionService: QuestionDataService;
 
@@ -22,6 +23,7 @@ export class QuestionsComponent implements OnInit {
 
     //initialize the question with a default type for now.
     this.question = this.questionService.getQuestionTypeData("single");
+    this.questions = this.questionService.getQuestions();
 
   }
 
