@@ -124,8 +124,9 @@ export class TestData {
 
     let typeString: string = questionData["type_text"];
     //if( typeString in QuestionTypes) qtype = QuestionTypes[typeString];
+    //Quizki type names are capitalized but are displayed in lowercase using the enum
     qtype = QuestionTypes[typeString.toLowerCase()];
-    console.log(QuestionTypes[qtype]);
+
 
     //at this point there are all the components to build a Question
 

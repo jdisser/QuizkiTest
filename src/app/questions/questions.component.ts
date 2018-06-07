@@ -28,4 +28,8 @@ export class QuestionsComponent implements OnInit {
 
   }
 
+  public getQuestionTypesString(index: number){
+    return QuestionTypes[index];
+  }
+
 }

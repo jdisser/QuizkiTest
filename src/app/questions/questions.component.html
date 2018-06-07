@@ -12,7 +12,7 @@
         <tr *ngFor = "let question of questions">
           <td>{{question.id}}</td>
           <td>{{question.user}}</td>
-          <td>{{question.type}}</td>
+          <td>{{getQuestionTypesString(question.type)}}</td>
           <td>{{question.description}}</td>
         </tr>
       </table>
