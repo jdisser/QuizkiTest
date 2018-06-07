@@ -3,8 +3,8 @@ import {Question} from "../questionModel"
 import {QuestionDifficulties} from "./question-difficulties/questionDifficultiesEnum"
 import {QuestionChoice} from "./question-choices/questionChoiceModel"
 import {QuestionReference} from "./question-references/questionReferenceModel"
-import {QuestionTopic} from "./question-topics/QuestionTopicModel"
-import {QuestionTypes} from "./question-types/QuestionTypesEnum"
+import {QuestionTopic} from "./question-topics/questionTopicModel"
+import {QuestionTypes} from "./question-types/questionTypesEnum"
 
 
 

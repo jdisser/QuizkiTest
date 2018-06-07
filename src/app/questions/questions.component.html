@@ -1,8 +1,20 @@
 <div class="row">
   <div class="col-md-12">
-    <h2>
-      {{ title }}!
-    </h2>
-    <app-questions></app-questions>
+    <h2></h2>
+      <table class="table table-striped">
+        <caption>Data From JSON Test Questions</caption>
+        <tr>
+          <th>ID</th>
+          <th>USER</th>
+          <th>TYPE</th>
+          <th>DESCRIPTION</th>
+        </tr>
+        <tr *ngFor = "let question of questions">
+          <td>{{question.id}}</td>
+          <td>{{question.user}}</td>
+          <td>{{question.type}}</td>
+          <td>{{question.description}}</td>
+        </tr>
+      </table>
   </div>
 </div>

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {QuestionDataService} from "../questionData/question-data.service"
 import {Question} from "./questionModel"
+import {QuestionTypes} from "./question/question-types/questionTypesEnum"
 
 @Component({
   selector: 'app-questions',
