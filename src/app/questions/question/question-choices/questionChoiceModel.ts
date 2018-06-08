@@ -2,7 +2,7 @@ export class QuestionChoice {
   constructor(
     public id: number,
     public text: string,
-    public isCorrect: boolean,
+    public isCorrect: string,
     public sequence: number
   ){}
 }

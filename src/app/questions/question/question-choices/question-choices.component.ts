@@ -10,7 +10,6 @@ export class QuestionChoicesComponent implements OnInit {
 
   @Input() choices: QuestionChoice[]
   constructor() { }
-
   ngOnInit() {
   }
 }

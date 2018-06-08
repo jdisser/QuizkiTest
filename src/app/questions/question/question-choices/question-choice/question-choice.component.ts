@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import {QuestionChoice} from "../questionChoiceModel";
 
 @Component({
   selector: 'app-question-choice',
@@ -7,9 +8,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class QuestionChoiceComponent implements OnInit {
 
+  @Input() choice: QuestionChoice;
+
   constructor() { }
 
   ngOnInit() {
+    console.log(this.choice);
   }
 
+  public getIsCorrectString(isCorrect: string){
+    if(isCorrect.toLowerCase() == "false")
+      return "Incorrect";
+    else
+      return "Correct";
+  }
 }

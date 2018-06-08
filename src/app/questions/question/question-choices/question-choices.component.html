@@ -1,2 +1,5 @@
-<h1>Component: Choices</h1>
-<h2>{{qChoices}}</h2>
+<h4>ANSWERS:</h4>
+<app-question-choice
+  *ngFor = "let choice of choices"
+  [choice] = "choice"
+></app-question-choice>
