@@ -17,14 +17,27 @@ import {QuestionTypes} from "./question-types/questionTypesEnum"
 export class QuestionComponent implements OnInit {
   @Input() question: Question;
 
-  type: QuestionTypes = this.question.type;
-  topics: QuestionTopic[] = this.question.topics;
-  references: QuestionReference[] = this.question.references;
-  choices: QuestionChoice[] = this.question.choices;
-  difficulty: QuestionDifficulties = this.question.difficulty;
+  type: QuestionTypes
+  topics: QuestionTopic[]
+  references: QuestionReference[]
+  choices: QuestionChoice[]
+  difficulty: QuestionDifficulties
 
   constructor() { }
 
   ngOnInit() {
+    this.type = this.question.type;
+    this.topics = this.question.topics;
+    this.references = this.question.references;
+    this.choices = this.question.choices;
+    this.difficulty = this.question.difficulty;
+  }
+
+  public getQuestionTypeString(index: number){
+    return QuestionTypes[index];
+  }
+
+  public getQuestionDifficultyString(index: number){
+    return QuestionDifficulties[index];
   }
 }

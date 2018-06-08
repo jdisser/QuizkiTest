@@ -1,2 +1,5 @@
-<h1>Component: References</h1>
-<h2>{{qReferences}}</h2>
+<h3><small>REFERENCES:</small></h3>
+<app-question-reference
+  *ngFor = "let reference of references"
+  [reference] = "reference"
+></app-question-reference>

@@ -1,2 +1,5 @@
-<h1>Component: Topics</h1>
-<h2>{{qTopics}}</h2>
+<h4><small>TOPICS:</small></h4>
+<app-question-topic
+  *ngFor = "let topic of topics"
+  [topic] = "topic">
+</app-question-topic>

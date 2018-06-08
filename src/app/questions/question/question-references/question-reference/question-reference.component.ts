@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import {QuestionReference} from "../questionReferenceModel"
 
 @Component({
   selector: 'app-question-reference',
@@ -6,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./question-reference.component.css']
 })
 export class QuestionReferenceComponent implements OnInit {
+
+  @Input() reference: QuestionReference;
 
   constructor() { }
 
