@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import {QuestionDataService} from "../questionData/question-data.service"
 import {Question} from "./questionModel"
 import {QuestionTypes} from "./question/question-types/questionTypesEnum"
@@ -13,6 +13,7 @@ export class QuestionsComponent implements OnInit {
   questions: Question[];
   question: Question;
   questionService: QuestionDataService;
+  @Input() title: string;
 
   constructor( questionService: QuestionDataService) {
 
