@@ -40,4 +40,8 @@ export class QuestionComponent implements OnInit {
   public getQuestionDifficultyString(index: number){
     return QuestionDifficulties[index];
   }
+
+  public processQuestionText(text: string){
+    return text.replace("&nbsp;","__________")
+  }
 }
