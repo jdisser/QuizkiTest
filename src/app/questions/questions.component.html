@@ -10,7 +10,8 @@
           <button
              type="button"
              class="list-group-item"
-             *ngFor = "let question of questions">
+             *ngFor = "let question of questions"
+             (click) = "selectQuestion(question)">
              <p>
                ID:{{question.id}}
                USER:{{question.user}}

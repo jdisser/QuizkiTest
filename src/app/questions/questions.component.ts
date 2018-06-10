@@ -32,4 +32,10 @@ export class QuestionsComponent implements OnInit {
   public getQuestionTypesString(index: number){
     return QuestionTypes[index];
   }
+
+  public selectQuestion(selected: Question){
+    this.question = selected;
+  }
+
+
 }
