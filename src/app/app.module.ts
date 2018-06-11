@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
+import { HttpClientModule } from '@angular/common/http'
 import { QuestionComponent } from './questions/question/question.component';
 import { QuestionTopicsComponent } from './questions/question/question-topics/question-topics.component';
 import { QuestionReferencesComponent } from './questions/question/question-references/question-references.component';
@@ -12,6 +13,7 @@ import { QuestionReferenceComponent } from './questions/question/question-refere
 import { QuestionTopicComponent } from './questions/question/question-topics/question-topic/question-topic.component';
 import { QuestionDifficultyComponent } from './questions/question/question-difficulties/question-difficulty.component';
 import { QuestionTypeComponent } from './questions/question/question-types/question-type.component';
+import { LoginComponent} from './login/login.component'
 
 
 
@@ -29,11 +31,13 @@ import { QuestionTypeComponent } from './questions/question/question-types/quest
     QuestionReferenceComponent,
     QuestionTopicComponent,
     QuestionDifficultyComponent,
-    QuestionTypeComponent
+    QuestionTypeComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
