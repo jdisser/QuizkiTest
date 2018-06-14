@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import {HttpClient} from '@angular/common/http'
+import {HttpClient, HttpParams, HttpHeaders} from '@angular/common/http';
+import { Observable } from 'rxjs';
+
 
 @Component({
   selector: 'app-login',
@@ -23,6 +25,22 @@ export class LoginComponent implements OnInit {
   public login(){
     console.log("Login: Username: " + this.username + " Password: " + this.password);
     this.loginStatus = "Requested"
+    this.requestLogin(this.username, this.password).subscribe((res:Response) => console.log(res));
+  }
+
+  private requestLogin(user: string, pw: string): Observable<any>{
+    const body = new HttpParams()
+    .set('username', user)
+    .set('password', pw);
+
+    return this.http.post('http://localhost:8080/loginServlet',
+      body.toString(),
+      {
+        headers: new HttpHeaders()
+          .set('Content-Type', 'application/x-www-form-urlencoded')
+      }
+    );
+
   }
 
 }
