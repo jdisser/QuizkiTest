@@ -10,6 +10,11 @@ Run 'ng serve --open' to open browser automatically.
 
 If 'ng serve' is not working run 'npm link' before running 'ng serve'
 
+### Mock API
+
+npm install json-server --save
+npm run json-server
+
 ## Code scaffolding
 
 Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
