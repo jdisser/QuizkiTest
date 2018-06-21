@@ -13,7 +13,8 @@ import { QuestionReferenceComponent } from './questions/question/question-refere
 import { QuestionTopicComponent } from './questions/question/question-topics/question-topic/question-topic.component';
 import { QuestionDifficultyComponent } from './questions/question/question-difficulties/question-difficulty.component';
 import { QuestionTypeComponent } from './questions/question/question-types/question-type.component';
-import { LoginComponent} from './login/login.component'
+import { LoginComponent} from './login/login.component';
+import { HttpInterceptorProviders} from './http-interceptors/index'
 
 
 
@@ -39,7 +40,7 @@ import { LoginComponent} from './login/login.component'
     FormsModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [ HttpInterceptorProviders ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
