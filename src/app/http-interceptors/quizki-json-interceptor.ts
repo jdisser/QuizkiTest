@@ -5,10 +5,19 @@ import { Observable } from 'rxjs';
 @Injectable()
 export class QuizkiJsonInterceptor implements HttpInterceptor {
   intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
-    //test the injector to see if this header is added
-    //const modReq = req.clone({setHeaders: {'Custom-Header': 'test'}});
-    //the header was added but rejected by the cors preflight, look like it's working
-    //made a do nothing interceptor to confirm
-    return next.handle(req);
+
+    //console.log("In Interceptor with request to: " + req.url)
+    const modReq: HttpRequest<any> = req;
+
+    //set content type for specific URL's
+
+    if(req.url == "http://localhost:8080/index.jsp"){
+      const modReq = req.clone({setHeaders: {'Content-Type': 'text/HTML'}});
+    } else {
+      const modReq = req.clone({setHeaders: {'Content-Type': 'application/x-www-form-urlencoded'}});
+    }
+
+
+    return next.handle(modReq);
   }
 }

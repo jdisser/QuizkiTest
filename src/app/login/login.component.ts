@@ -25,7 +25,10 @@ export class LoginComponent implements OnInit {
   public login(){
     console.log("Login: Username: " + this.username + " Password: " + this.password);
     this.loginStatus = "Requested"
-    this.requestLogin(this.username, this.password).subscribe((res:Response) => console.log("Observable returned:" + res));
+    this.requestLogin(this.username, this.password).subscribe((res: Response) => {
+      console.log("Observable returned:" + res);
+      this.loginStatus = "Logged In"
+    });
   }
 
   private requestLogin(user: string, pw: string): Observable<any>{
@@ -38,7 +41,7 @@ export class LoginComponent implements OnInit {
       {
         headers: new HttpHeaders()
           .set('Content-Type', 'application/x-www-form-urlencoded'),
-        observe: 'response'
+        responseType: 'text'
       }
     );
 
