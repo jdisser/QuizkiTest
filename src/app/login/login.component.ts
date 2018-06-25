@@ -26,8 +26,8 @@ export class LoginComponent implements OnInit {
     console.log("Login: Username: " + this.username + " Password: " + this.password);
     this.loginStatus = "Requested"
     this.requestLogin(this.username, this.password).subscribe((res: Response) => {
-      console.log("Observable returned:" + res);
-      this.loginStatus = "Logged In"
+      console.log("Login Response Body: " + res);
+      this.loginStatus = res.toString();
     });
   }
 
