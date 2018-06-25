@@ -25,7 +25,10 @@ export class LoginComponent implements OnInit {
   public login(){
     console.log("Login: Username: " + this.username + " Password: " + this.password);
     this.loginStatus = "Requested"
-    this.requestLogin(this.username, this.password).subscribe((res:Response) => console.log(res));
+    this.requestLogin(this.username, this.password).subscribe((res: Response) => {
+      console.log("Login Response Body: " + res);
+      this.loginStatus = res.toString();
+    });
   }
 
   private requestLogin(user: string, pw: string): Observable<any>{
@@ -33,11 +36,12 @@ export class LoginComponent implements OnInit {
     .set('username', user)
     .set('password', pw);
 
-    return this.http.post('http://localhost:8080/loginServlet',
+    return this.http.post('http://localhost:8080/LoginServlet',
       body.toString(),
       {
         headers: new HttpHeaders()
-          .set('Content-Type', 'application/x-www-form-urlencoded')
+          .set('Content-Type', 'application/x-www-form-urlencoded'),
+        responseType: 'text'
       }
     );
 
