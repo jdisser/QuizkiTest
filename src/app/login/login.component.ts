@@ -28,25 +28,31 @@ export class LoginComponent implements OnInit {
     console.log("Login: Username: " + this.username + " Password: " + this.password);
     this.loginStatus = "Requested"
     this.requestLogin(this.username, this.password).subscribe((res: User) => {
-      console.log("Login User: " + res.toString());
-      this.loginStatus = "Logged In";
+      console.log("Login User: " + res.name);
+      this.loginStatus = `${res.name} Logged In`;
     });
   }
 
   private requestLogin(user: string, pw: string): Observable<User>{
 
     //construct the authorization headers
-    let authHeader: string = "Basic ";
+    let authHeader: string = "Basic " + btoa(`${user}:${pw}`);
+
+    console.log("User: " + user);
+    console.log("PW: " + pw);
+    /*this doesn't work!!!
+    authHeader.concat( user);
+    authHeader.concat( ":");
+    authHeader.concat( pw);
+    */
+    console.log("Authorization Header: " + authHeader);
 
 
-    authHeader.concat(btoa("Basic " + user + ":" + pw));
-
-
-    return this.http.post<User>('http://localhost:8080/verfiyCredentials',
-      null,
+    return this.http.get<User>('http://localhost:8080/api/verifyCredentials',
       {
         headers: new HttpHeaders()
-          .set('Authorization', authHeader),
+          .set('Authorization', authHeader)
+          .append('content-type',"application/json"),
         responseType: 'json'
       }
     );

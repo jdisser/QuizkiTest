@@ -20,6 +20,7 @@ export class QuizkiJsonInterceptor implements HttpInterceptor {
     return next.handle(modReq)
       .pipe(
         map((event$: HttpEvent<any>) => {
+            console.log("in Response intercept: ");
             //Enter a response handler here...
             //let loginEvent$: HttpEvent<any> = event$.clone<any>({ body: replacementBody});
              return event$;
